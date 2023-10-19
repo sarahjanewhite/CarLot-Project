@@ -62,4 +62,77 @@ public class Car {
     public String toString() {
         // Method to generate a formatted string representation of the Car object.
     }
+
+    /**
+    * Displays a text representation of a specific Car object 
+    */
+    
+    public String toString() {
+    
+        System.out.println("Car ID: " + getId());
+        System.out.println("Mileage: " +getMileage());
+        System.out.println("MPG: " +getMpg());
+        System.out.println("Cost: $" + getCost());
+        System.out.println("Sales Price: $" +getSalesPrice());
+        System.out.println("Sold?: " +isSold());
+        System.out.println("Price Sold: $" +getPriceSold());
+        System.out.println("Profit: $" +getProfit());
+    }
+     
+    /**
+    * Compares the sales price of this instance of car to another instance
+    * Returns a negative number if this car's sales price is lower
+    * Returns zero if the prices are equal
+    * Returns a positive number is this car's sales price is higher
+    *
+    * @param Car otherCar This is the car whose sales price will be compared
+    */
+    
+    public double compareSalesprice(Car otherCar) {
+    
+        double difference = getPriceSold() - otherCar.getPriceSold();
+    
+        return difference;
+    }
+    
+    /**
+    * Returns the asking price of the current car object
+    */
+    
+    public double getSalesPrice() {
+        
+        return salesPrice;
+    }
+    
+    /**
+    * Allows the user to change the asking price of the current car object
+    * Returns the new asking price
+    *
+    * @param double salesPrice The asking price for the car
+    */
+    public double setSalesPrice (double salesPrice) {
+        this.salesPrice = salesPrice ;
+        return this.salesPrice;
+    }
+    
+    /**
+    * Returns the actual sale price of the current car object
+    */
+    
+    public double getPriceSold() {
+        
+        return priceSold;
+    }
+    
+    /**
+    * Allows the user to enter the price the car was sold for
+    * Returns the new sales price
+    *
+    * @param double priceSold The price the car was sold for
+    */
+    
+    public double setPriceSold (double priceSold) {
+        this.priceSold = priceSold;
+        return this.priceSold;
+    }
 }

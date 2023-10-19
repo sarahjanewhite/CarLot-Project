@@ -43,6 +43,7 @@ public class Car {
 
     public double getCost() {
         // Assigned to Sarah
+        return cost;
 
     }
 
@@ -68,6 +69,13 @@ public class Car {
     // price).
     public int compareMPG(Car otherCar) {
         // Assigned to Sarah
+        if (mpg < otherCar.mpg) {
+            return -1;
+        } else if (mpg > otherCar.mpg) {
+            return 1;
+        } else {
+            return 0;
+        }
 
 
     }

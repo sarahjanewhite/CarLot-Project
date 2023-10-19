@@ -37,6 +37,7 @@ public class Car {
     // Accessor methods to retrieve the values of the member variables.
     public int getMpg() {
         // Assigned to Sarah
+        return mpg;
 
     }
 

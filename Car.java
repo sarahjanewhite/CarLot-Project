@@ -47,12 +47,10 @@ public class Car {
     // Accessor methods to retrieve the values of the member variables.
     public int getMpg() {
         return mpg;
-
     }
 
     public double getCost() {
         return cost;
-
     }
 
     // TODO: getId goes here

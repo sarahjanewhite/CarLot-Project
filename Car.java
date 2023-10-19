@@ -36,13 +36,11 @@ public class Car {
     // Accessor methods
     // Accessor methods to retrieve the values of the member variables.
     public int getMpg() {
-        // Assigned to Sarah
         return mpg;
 
     }
 
     public double getCost() {
-        // Assigned to Sarah
         return cost;
 
     }
@@ -50,13 +48,11 @@ public class Car {
     // Setter methods
     // Setter methods to modify the values of the member variables.
     public void setMpg(int mpg) {
-        // Assigned to Sarah
         setMpg = mpg;
 
     }
 
     public void setCost(double cost) {
-        // Assigned to Sarah
         setCost = cost;
 
     }
@@ -68,7 +64,6 @@ public class Car {
     // Methods for comparing Car objects based on specific attributes (mpg, mileage,
     // price).
     public int compareMPG(Car otherCar) {
-        // Assigned to Sarah
         if (mpg < otherCar.mpg) {
             return -1;
         } else if (mpg > otherCar.mpg) {

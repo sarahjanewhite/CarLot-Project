@@ -55,9 +55,9 @@ public class Car {
 
     }
 
-    // getId
+    // TODO: getId goes here
 
-    // getMileage
+    // TODO: getMileage goes here
 
     public double getSalesPrice() {
         return salesPrice;
@@ -88,7 +88,7 @@ public class Car {
         this.id = id;
     }
 
-    // setMileage
+    // TODO: setMileage goes here
 
     public void setSalesPrice(double salesPrice) {
         this.salesPrice = salesPrice;
@@ -110,16 +110,22 @@ public class Car {
     }
 
     // Comparison methods
-    public int compareMPG(Car otheCar) {
-        return Double.compare(this.mileage, otheCar.mileage);
+    public int compareMPG(Car otherCar) {
+        return Double.compare(this.mpg, otherCar.mpg);
     }
 
-    // compareMiles
+    // TODO: compareMiles comparison goes here (return Integer.compare)
 
+    public int comparePrice(Car otherCar) {
+        return Double.compare(this.salesPrice, otherCar.salesPrice);
+    }
+
+    // Calculate profit
     private void calculateProfit() {
         profit = priceSold - cost;
     }
 
+    // toString method
     @Override
     public String toString() {
         return "Car: " + id + ", Mileage: " + mileage + ", MPG " + mpg +

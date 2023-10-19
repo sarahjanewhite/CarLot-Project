@@ -12,11 +12,25 @@ public class Car {
     // Default Constructor
     public Car() {
         // Default constructor initializes a Car object with default values.
+        this.setId("default1");
+        this.setMileage(0);
+        this.setMpg(0);
+        this.setCost(0.0);
+        this.setSalesPrice(0.0);
+        this.setSold(false);
+        this.setPriceSold(0.0);
+        this.setProfit(0.0);
     }
 
     // Constructor for adding a new Car to the inventory
     public Car(String id, int mileage, int mpg, double cost, double salesPrice) {
         // Constructor for creating a new Car object with specified attributes.
+        this.setId(id);
+        this.setMileage(mileage);
+        this.setMpg(mpg);
+        this.setCost(cost);
+        this.setSalesPrice(salesPrice);
+
     }
 
     // Accessor methods

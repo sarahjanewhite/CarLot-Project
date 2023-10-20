@@ -119,19 +119,7 @@ public class Car {
     }
 
     public int compareMileage(Car otherCar) {
-        int thisMileage = this.getMileage(); // Assuming you have a method to get the mileage of this car
-        int otherMileage = otherCar.getMileage(); // Assuming you have a method to get the mileage of the other car
-
-        // Compare the mileage
-        if (thisMileage < otherMileage) {
-            return -1; // This car's mileage is lower
-        }
-        else if (thisMileage == otherMileage) {
-            return 0; // The mileage of both cars is the same
-        }
-        else {
-            return 1; // This car's mileage is higher
-        }
+        return Double.compare(this.mileage, otherCar.mileage);
     }
 
     public int comparePrice(Car otherCar) {

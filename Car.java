@@ -53,9 +53,13 @@ public class Car {
         return cost;
     }
 
-    // TODO: getId goes here
+    public String getId() {
+        return id;
+    }
 
-    // TODO: getMileage goes here
+    public int getMileage() {
+        return mileage;
+    }
 
     public double getSalesPrice() {
         return salesPrice;
@@ -86,7 +90,9 @@ public class Car {
         this.id = id;
     }
 
-    // TODO: setMileage goes here
+    public void setMileage(int mileage) {
+        this.mileage = mileage;
+    }
 
     public void setSalesPrice(double salesPrice) {
         this.salesPrice = salesPrice;
@@ -112,7 +118,21 @@ public class Car {
         return Double.compare(this.mpg, otherCar.mpg);
     }
 
-    // TODO: compareMiles comparison goes here (return Integer.compare)
+    public int compareMileage(Car otherCar) {
+        int thisMileage = this.getMileage(); // Assuming you have a method to get the mileage of this car
+        int otherMileage = otherCar.getMileage(); // Assuming you have a method to get the mileage of the other car
+
+        // Compare the mileage
+        if (thisMileage < otherMileage) {
+            return -1; // This car's mileage is lower
+        }
+        else if (thisMileage == otherMileage) {
+            return 0; // The mileage of both cars is the same
+        }
+        else {
+            return 1; // This car's mileage is higher
+        }
+    }
 
     public int comparePrice(Car otherCar) {
         return Double.compare(this.salesPrice, otherCar.salesPrice);

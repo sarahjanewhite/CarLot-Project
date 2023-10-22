@@ -1,51 +1,58 @@
-import java.util.Scanner;
-
 public class CarTester {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // Instantiate at least 2 Car objects
+        Car car1 = new Car("CAR001", 5000, 25, 15000.0, 20000.0);
+        Car car2 = new Car("CAR002", 7000, 20, 18000.0, 25000.0);
 
-        // Create a new Car using the default constructor
+        // Verify that both constructors work as specified
         Car defaultCar = new Car();
-        System.out.println("\nDefault Car:\n" + defaultCar + "\n");
+        System.out.println("Default Car:\n" + defaultCar + "\n");
 
-        // Get user input to create a new Car
-        System.out.println("Enter New User's Car details:");
-        System.out.print("ID: ");
-        String id = scanner.nextLine();
+        // Insure that the sellCar() method works properly
+        car1.sellCar(22000.0);
+        car2.sellCar(27000.0);
 
-        System.out.print("Mileage: ");
-        int mileage = scanner.nextInt();
+        // Print the Car objects after selling
+        System.out.println("Car 1:\n" + car1);
+        System.out.println("Car 2:\n" + car2);
 
-        System.out.print("MPG: ");
-        int mpg = scanner.nextInt();
+        // Test each compare method individually
+        int compareMpg = car1.compareMPG(car2);
+        int compareMiles = car1.compareMileage(car2);
+        int comparePrice = car1.comparePrice(car2);
 
-        System.out.print("Cost: ");
-        double cost = scanner.nextDouble();
+        System.out.println("Compare MPG: " + compareMpg);
+        System.out.println("Compare Miles: " + compareMiles);
+        System.out.println("Compare Price: " + comparePrice);
 
-        System.out.print("Sales Price: ");
-        double salesPrice = scanner.nextDouble();
-
-        // Creates and prints a new Car with user input
-        Car userCar = new Car(id, mileage, mpg, cost, salesPrice);
-        System.out.println("\nUser's Car:\n" + userCar);
-
-        // Ask the user if they want to sell the car
-        System.out.print("\nDo you want to sell the car? (yes/no): ");
-        scanner.nextLine();
-        String sellChoice = scanner.nextLine().toLowerCase();
-
-        if (sellChoice.equals("yes")) {
-            System.out.print("Enter the selling price: ");
-            double sellingPrice = scanner.nextDouble();
-
-            // Sell the car print statements
-            userCar.sellCar(sellingPrice);
-            System.out.println("\nSold User's Car:\n" + userCar);
+        // Verify that each compare method returns expected values
+        if (compareMpg < 0) {
+            System.out.println("Car 1 has lower MPG than Car 2.");
+        } else if (compareMpg > 0) {
+            System.out.println("Car 1 has higher MPG than Car 2.");
         } else {
-            System.out.println("\nUser chose not to sell the car.");
+            System.out.println("Car 1 and Car 2 have the same MPG.");
         }
 
-        // Close the scanner
-        scanner.close();
+        if (compareMiles < 0) {
+            System.out.println("Car 1 has fewer miles than Car 2.");
+        } else if (compareMiles > 0) {
+            System.out.println("Car 1 has more miles than Car 2.");
+        } else {
+            System.out.println("Car 1 and Car 2 have the same miles.");
+        }
+
+        if (comparePrice < 0) {
+            System.out.println("Car 1 has a lower price than Car 2.");
+        } else if (comparePrice > 0) {
+            System.out.println("Car 1 has a higher price than Car 2.");
+        } else {
+            System.out.println("Car 1 and Car 2 have the same price.");
+        }
+
+        // Display an error message if something goes wrong
+        if (compareMpg == 0 && compareMiles == 0 && comparePrice == 0) {
+            System.err.println("Error in comparison methods. Check the data or comparison methods.");
+        }
     }
 }

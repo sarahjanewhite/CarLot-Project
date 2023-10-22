@@ -116,10 +116,11 @@ public class Car {
     // Comparison methods
     public int compareMPG(Car otherCar) {
         return Double.compare(this.mpg, otherCar.mpg);
+
     }
 
     public int compareMileage(Car otherCar) {
-        return Double.compare(this.mileage, otherCar.mileage);
+        return Integer.compare(this.mileage, otherCar.mileage);
     }
 
     public int comparePrice(Car otherCar) {

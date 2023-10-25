@@ -1,17 +1,15 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 //Do we need an import statement for Car class?
 
 public class CarLot {
-   ArrayList<Car> inventory = new ArrayList<Car>();
+  ArrayList<Car> inventory = new ArrayList<Car>();
 
-   public void addCar​(String id, int mileage, int mpg, double cost, double salesPrice) {
-     
-   }
-
-   public CarLot() {
+  public CarLot() {
      ArrayList<Car> = //something;
    }
-   
+
   public Car findCarByIdentifier​(String identifier) {
      return
    }
@@ -44,27 +42,19 @@ public class CarLot {
     return
   }
 
-  public void sellCar​(java.lang.String identifier, double priceSold) {
-    
+  // Mutator methods
+  public void addCar(String id, int mileage, int mpg. double cost, double salesPrice) {
+    Car newCar = new Car(id, mileage, mpg, cost, salesPrice);
+    inventory.add(newCar);
   }
 
-  ///////***** Not listed for this week's assignment in Blackboard but included in JavaDoc *****/////////
+  public void sellCar(String identifier, double priceSold) throws IllegalArgumentException {
+    Car carToSell = findCarByIdentifier​(identifier);
+    if (carToSell == null) {
+      throw new IllegalArgumentException("Car not found with identifier: " + identifier);
+    }
 
-  public void setInventory​(ArrayList<Car> inventory)  {
-    
+    carToSell.sellCar(priceSold);
   }
 
-  public void loadFromDisk() {
-    
-  }
-
-  public void saveToDisk() {
-    
-  }
-  
-  
-  
 }
-
-                  
-

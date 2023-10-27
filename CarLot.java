@@ -27,11 +27,35 @@ public class CarLot {
   }
 
   public Car getCarWithBestMPG() {
-    return 
+    if (inventory.isEmpty()) {
+      return null;
+  }
+
+  Car bestMPGCar = inventory.get(0);
+
+  for (Car car : inventory) {
+      if (car.getMpg() > bestMPGCar.getMpg()) {
+          bestMPGCar = car;
+      }
+  }
+
+  return bestMPGCar;
   }
 
   public Car getCarWithHighestMileage() {
-    return
+    if (inventory.isEmpty()) {
+      return null;
+  }
+
+  Car highestMileageCar = inventory.get(0);
+
+  for (Car car : inventory) {
+      if (car.getMileage() > highestMileageCar.getMileage()) {
+          highestMileageCar = car;
+      }
+  }
+
+  return highestMileageCar;
   }
 
   ArrayList<Car> 	getInventory() {

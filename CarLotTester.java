@@ -9,9 +9,9 @@ public class CarLotTester {
         carlot.addCar("VWBeater", 200500, 10, 0.0, 500);
 
         // Testing Accessors
-        Car car1 = carlot.findCarByIdentifier​("HyundaiElantra");
-        Car car2 = carlot.findCarByIdentifier​("PoscheCayenne");
-        Car car3 = carlot.findCarByIdentifier​("VWBeater");
+        Car car1 = carlot.findCarByIdentifier("HyundaiElantra");
+        Car car2 = carlot.findCarByIdentifier("PoscheCayenne");
+        Car car3 = carlot.findCarByIdentifier("VWBeater");
 
         if (car1 != null){
             System.out.println("Car" + car1 + "found");

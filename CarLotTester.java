@@ -9,29 +9,29 @@ public class CarLotTester {
         carlot.addCar("VWBeater", 200500, 10, 0.0, 500);
 
         // Testing Accessors
-        Car car1 = carlot.findCarByIdentifier("HyundaiElantra");
-        Car car2 = carlot.findCarByIdentifier("PoscheCayenne");
-        Car car3 = carlot.findCarByIdentifier("VWBeater");
+        Car car1 = carlot.findCarByIdentifier​("HyundaiElantra");
+        Car car2 = carlot.findCarByIdentifier​("PoscheCayenne");
+        Car car3 = carlot.findCarByIdentifier​("VWBeater");
 
         if (car1 != null){
-            System.out.println("Car" + car1 + "found");
+            System.out.println("HyundaiElantra found");
         }
         else{
-            System.out.println("Car" + car1 + "not found");
+            System.out.println("HyundaiElantra not found");
         }
 
         if (car2 != null){
-            System.out.println("Car" + car2 + "found");
+            System.out.println("PoscheCayenne found");
         }
         else{
-            System.out.println("Car" + car2 + "not found");
+            System.out.println("PoscheCayenne not found");
         }
 
         if (car3 != null){
-            System.out.println("Car" + car3 + "found");
+            System.out.println("VWBeater found");
         }
         else{
-            System.out.println("Car" + car3 + "not found");
+            System.out.println("VWBeater not found");
         }
 
 

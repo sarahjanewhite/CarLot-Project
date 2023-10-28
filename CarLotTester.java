@@ -25,9 +25,9 @@ public class CarLotTester {
        }
 
         // Testing Accessors
-        Car car1 = carlot.findCarByIdentifier​("Hyundai Elantra");  // Removed the invisible character after findCarByIdentifier
-        Car car2 = carlot.findCarByIdentifier​("Porsche Cayenne");  // Removed the invisible character after findCarByIdentifier
-        Car car3 = carlot.findCarByIdentifier​("VW Beater");  // Removed the invisible character after findCarByIdentifier
+        Car car1 = carlot.findCarByIdentifier​("Hyundai Elantra");
+        Car car2 = carlot.findCarByIdentifier​("Porsche Cayenne");
+        Car car3 = carlot.findCarByIdentifier​("VW Beater");
 
         if (car1 != null) {
             System.out.println("Hyundai Elantra found");
@@ -49,7 +49,7 @@ public class CarLotTester {
 
         System.out.println("The cars in order of entry are: " + carlot.getCarsInOrderOfEntry() + "\n");
 
-        System.out.println("The average MPG on the lot is: " + carlot.getAverageMPG() + "\n");
+        System.out.println("The average MPG on the lot is: " + String.format("%.2f", carlot.getAverageMPG()) + "\n");
 
         System.out.println("The cars sorted by MPG are: " + carlot.getCarsSortedByMPG() + "\n");
 
@@ -60,16 +60,18 @@ public class CarLotTester {
         System.out.println("The car with the highest mileage is: " + carlot.getCarWithHighestMileage() + "\n");
 
         //Sell car(s)
-        carlot.sellCar("HyundaiElantra", 20800.75);
-        System.out.println("The HyundaiElantra has been sold for: $20800.75");
-        carlot.sellCar("PorscheCayenne", 75000.98);
-        System.out.println("The PorscheCayenne has been sold for: $75000.98");
-        carlot.sellCar("VWBeater", 500.00);
-        System.out.println("The VWBeater has been sold for: $500.00");
+        carlot.sellCar("Hyundai Elantra", 20800.75);
+        System.out.println("The Hyundai Elantra has been sold for: $20800.75");
+        carlot.sellCar("Porsche Cayenne", 75000.98);
+        System.out.println("The Porsche Cayenne has been sold for: $75000.98");
+        carlot.sellCar("VW Beater", 500.00);
+        System.out.println("The VW Beater has been sold for: $500.00");
 
+        System.out.println();
         System.out.println("The inventory is now: " + carlot.getInventory());
 
-        System.out.println("The profit is now: " + carlot.getTotalProfit());
+        System.out.println();
+        System.out.println("The profit is now: $" + String.format("%.2f", carlot.getTotalProfit()));
 
     }
 }

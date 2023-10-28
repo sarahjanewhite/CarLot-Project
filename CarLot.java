@@ -13,16 +13,12 @@ public class CarLot {
    }
 
   public Car findCarByIdentifier​(String identifier) {
-
-    for(int i = 0; i < inventory.size(); i++) {
-      for (Car car : inventory){}
-        if(car.getId() == identifier) {
-            return car;
-        }
-        else {
-            throw new RuntimeErrorException("There is no car with that id");
-        } 
+    for (Car car : inventory){
+      if (car.getId().equals(identifier)){
+        return car;
+      }
     }
+    return null;
    }
 
   public double getAverageMpg() {

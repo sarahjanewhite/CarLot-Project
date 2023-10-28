@@ -34,7 +34,7 @@ public class CarLotTester {
             System.out.println("VWBeater not found");
         }
         
-        System.out.println("The average MPG on the lot is: " + carlot.getAverageMPG());
+        System.out.println("The average MPG on the lot is: " + carlot.getAverageMpg());
 
         System.out.println("The car with the best MPG is: " + carlot.getCarWithBestMPG());
 

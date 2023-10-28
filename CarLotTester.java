@@ -34,6 +34,10 @@ public class CarLotTester {
             System.out.println("VWBeater not found");
         }
 
+        //Sell car(s)
+        carlot.sellCar("HyundaiElantra", 20800.75);
+        //carlot.sellCar("PoscheCayenne", 75000.98);
+        //carlot.sellCar("VWBeater", 500.00);
 
     }
 }

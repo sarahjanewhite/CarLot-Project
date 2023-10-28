@@ -4,11 +4,10 @@ public class CarLotTester {
         CarLot carlot = new CarLot();
         
         //Adds cars to the car lot
-        addCar(HyundaiElantra, 56000, 45, 13500.50, 20800.75);
-        addCar(PoscheCayenne, 200, 25, 45000.00, 75000.98);
-        addCar(VWBeater, 200500, 10, 0.0, 500);
+        carlot.addCar("HyundaiElantra", 56000, 45, 13500.50, 20800.75);
+        carlot.addCar("PoscheCayenne", 200, 25, 45000.00, 75000.98);
+        carlot.addCar("VWBeater", 200500, 10, 0.0, 500);
 
-<<<<<<< HEAD
         // Testing Accessors
         Car car1 = carlot.findCarByIdentifier​(null);
 
@@ -19,7 +18,5 @@ public class CarLotTester {
         else{
             System.out.println("Car" + car1 + "not found");
         }
-=======
->>>>>>> 4456887ef044275c84489ba29f0f8b9f8a58082b
     }
 }

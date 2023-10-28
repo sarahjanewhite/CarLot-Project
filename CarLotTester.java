@@ -18,5 +18,9 @@ public class CarLotTester {
         else{
             System.out.println("Car" + car1 + "not found");
         }
+
+        carlot.sellCar("HyundaiElantra", 20800.75);
+        //carlot.sellCar("PoscheCayenne", 75000.98);
+        //carlot.sellCar("VWBeater", 500.00);
     }
 }

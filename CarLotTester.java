@@ -33,12 +33,16 @@ public class CarLotTester {
         else{
             System.out.println("VWBeater not found");
         }
-        
-        System.out.println("The average MPG on the lot is: " + carlot.getAverageMpg());
+
+        System.out.println("The cars in order of entry are: " + carlot.getCarsInOrderOfEntry());
+
+        System.out.println("The average MPG on the lot is: " + carlot.getAverageMPG());
 
         System.out.println("The cars sorted by MPG are: " + carlot.getCarsSortedByMPG());
 
         System.out.println("The car with the best MPG is: " + carlot.getCarWithBestMPG());
+
+        System.out.println("The cars sorted by MPG are: " + carlot.getCarsSortedByMPG());
 
         System.out.println("The car with the highest mileage is: " + carlot.getCarWithHighestMileage());
 
@@ -49,6 +53,10 @@ public class CarLotTester {
         System.out.println("The PorscheCayenne has been sold for: $75000.98");
         carlot.sellCar("VWBeater", 500.00);
         System.out.println("The VWBeater has been sold for: $500.00");
+
+        System.out.println("The inventory is now: " + carlot.getInventory());
+
+        System.out.println("The profit is now: " + carlot.getTotalProfit());
 
     }
 }

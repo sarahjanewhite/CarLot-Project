@@ -4,9 +4,9 @@ public class CarLotTester {
         CarLot carlot = new CarLot();
         
         //Adds cars to the car lot
-        carlot.addCar("HyundaiElantra", 56000, 45, 13500.50, 20800.75);
-        carlot.addCar("PorscheCayenne", 200, 25, 45000.00, 75000.98);
-        carlot.addCar("VWBeater", 200500, 10, 0.0, 500);
+        carlot.addCar("HyundaiElantra", 56000, 45, 13500.50, 0.0);
+        carlot.addCar("PorscheCayenne", 200, 25, 45000.00, 0.0);
+        carlot.addCar("VWBeater", 200500, 10, 0.0, 0.0);
 
         // Testing Accessors
         Car car1 = carlot.findCarByIdentifier​("HyundaiElantra");

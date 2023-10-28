@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 // import java.util.Collections;
-
-//Do we need an import statement for Car class?
-
 // import javax.management.RuntimeErrorException;
 
 public class CarLot {

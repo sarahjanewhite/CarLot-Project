@@ -23,11 +23,27 @@ public class CarLot {
    }
 
   public double getAverageMpg() {
-    return
+    if (inventory.isEmpty()) {
+            return 0; // could throw an exception if needed
+        }
+
+        double sum = 0;
+        for (Car car : inventory) {
+            sum += car.getMpg();
+        }
+
+        averageMpg = sum / inventory.size();
+
+        return averageMpg;
+    }
   }
 
   public ArrayList<Car> getCarsSortedByMPG() {
-    return
+    ArrayList<Car> sortedByMPG = new ArrayList<>(inventory);
+
+    Collections.sort(sortedCars, Comparator.comparingDouble(Car::getMpg));
+
+    return sortedByMPG;
   }
 
   public ArrayList<Car> getCarsInOrderOfEntry() {
@@ -71,8 +87,15 @@ public class CarLot {
   }
 
   public double getTotalProfit() {
-    return
+    double totalProfit = 0;
+
+    for (Car car : inventory) {
+        totalProfit += car.getProfit();
+    }
+
+    return totalProfit;
   }
+
 
   // Mutator methods
   public void addCar(String id, int mileage, int mpg. double cost, double salesPrice) {

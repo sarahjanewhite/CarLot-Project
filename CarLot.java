@@ -22,7 +22,7 @@ public class CarLot {
     return null;
    }
 
-  public double getAverageMpg() {
+  public double getAverageMPG() {
     if (inventory.isEmpty()) {
             return 0; // could throw an exception if needed
         }

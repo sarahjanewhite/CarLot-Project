@@ -11,7 +11,15 @@ public class CarLot {
    }
 
   public Car findCarByIdentifier​(String identifier) {
-     return
+
+    for(int i = 0; i < inventory.size(); i++) {
+        if(car.getId() == identifier) {
+            return car;
+        }
+        else {
+            throw new RuntimeErrorException("There is no car with that id");
+        } 
+    }
    }
 
   public double getAverageMpg() {

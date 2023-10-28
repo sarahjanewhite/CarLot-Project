@@ -5,7 +5,7 @@ public class CarLotTester {
         
         //Adds cars to the car lot
         carlot.addCar("HyundaiElantra", 56000, 45, 13500.50, 20800.75);
-        carlot.addCar("PoscheCayenne", 200, 25, 45000.00, 75000.98);
+        carlot.addCar("PorscheCayenne", 200, 25, 45000.00, 75000.98);
         carlot.addCar("VWBeater", 200500, 10, 0.0, 500);
 
         // Testing Accessors
@@ -36,7 +36,7 @@ public class CarLotTester {
 
         //Sell car(s)
         carlot.sellCar("HyundaiElantra", 20800.75);
-        //carlot.sellCar("PoscheCayenne", 75000.98);
+        //carlot.sellCar("PorscheCayenne", 75000.98);
         //carlot.sellCar("VWBeater", 500.00);
 
     }

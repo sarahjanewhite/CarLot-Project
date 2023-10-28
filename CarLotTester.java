@@ -20,18 +20,20 @@ public class CarLotTester {
             System.out.println("Car" + car1 + "not found");
         }
 
-        if (car1 != null){
+        if (car2 != null){
             System.out.println("Car" + car2 + "found");
         }
         else{
             System.out.println("Car" + car2 + "not found");
         }
 
-        if (car1 != null){
+        if (car3 != null){
             System.out.println("Car" + car3 + "found");
         }
         else{
             System.out.println("Car" + car3 + "not found");
         }
+
+
     }
 }

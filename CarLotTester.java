@@ -33,6 +33,12 @@ public class CarLotTester {
         else{
             System.out.println("VWBeater not found");
         }
+        
+        System.out.println("The average MPG on the lot is: " + carlot.getAverageMPG());
+
+        System.out.println("The car with the best MPG is: " + carlot.getCarWithBestMPG());
+
+        System.out.println("The car with the highest mileage is: " + carlot.getCarWithHighestMileage());
 
         //Sell car(s)
         carlot.sellCar("HyundaiElantra", 20800.75);

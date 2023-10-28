@@ -6,15 +6,16 @@ import java.util.Comparator;
 import javax.management.RuntimeErrorException;
 
 public class CarLot {
-  ArrayList<Car> inventory = new ArrayList<Car>();
+  private ArrayList<Car> inventory;
 
   public CarLot() {
-     ArrayList<Car> = //something;
+    inventory = new ArrayList<Car>();
    }
 
   public Car findCarByIdentifier​(String identifier) {
 
     for(int i = 0; i < inventory.size(); i++) {
+      for (Car car : inventory){}
         if(car.getId() == identifier) {
             return car;
         }
@@ -34,16 +35,14 @@ public class CarLot {
             sum += car.getMpg();
         }
 
-        averageMpg = sum / inventory.size();
-
-        return averageMpg;
+        return sum / inventory.size();
     }
   }
 
   public ArrayList<Car> getCarsSortedByMPG() {
     ArrayList<Car> sortedByMPG = new ArrayList<>(inventory);
 
-    Collections.sort(sortedCars, Comparator.comparingDouble(Car::getMpg));
+    sortedByMPG.sort(Comparator.comparingDouble(Car::getMpg));
 
     return sortedByMPG;
   }

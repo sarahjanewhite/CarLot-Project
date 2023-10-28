@@ -48,10 +48,8 @@ public class CarLot {
   }
 
   public ArrayList<Car> getCarsInOrderOfEntry() {
-    ArrayList<Car> inventoryInOrderOfEntry = new ArrayList<Car>();
-    inventoryInOrderOfEntry = (ArrayList)inventory.clone();
 
-    return inventoryInOrderOfEntry;
+    return new ArrayList<>(inventory);
   }
 
   public Car getCarWithBestMPG() {

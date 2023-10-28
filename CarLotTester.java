@@ -36,7 +36,7 @@ public class CarLotTester {
 
         System.out.println("The cars in order of entry are: " + carlot.getCarsInOrderOfEntry());
 
-        System.out.println("The average MPG on the lot is: " + carlot.getAverageMpg());
+        System.out.println("The average MPG on the lot is: " + carlot.getAverageMPG());
 
         System.out.println("The cars sorted by MPG are: " + carlot.getCarsSortedByMPG());
 

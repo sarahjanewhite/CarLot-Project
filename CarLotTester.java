@@ -44,8 +44,11 @@ public class CarLotTester {
 
         //Sell car(s)
         carlot.sellCar("HyundaiElantra", 20800.75);
-        //carlot.sellCar("PorscheCayenne", 75000.98);
-        //carlot.sellCar("VWBeater", 500.00);
+        System.out.println("The HyundaiElantra has been sold for: $20800.75");
+        carlot.sellCar("PorscheCayenne", 75000.98);
+        System.out.println("The PorscheCayenne has been sold for: $75000.98");
+        carlot.sellCar("VWBeater", 500.00);
+        System.out.println("The VWBeater has been sold for: $500.00");
 
     }
 }

@@ -3,9 +3,7 @@ public class CarLotTester {
         // creates a new car lot
         CarLot carlot = new CarLot();
 
-        // add cars here
-
-
-        // display the inventory we have
+        // Testing Accessors
+        Car car1 = carlot.findCarByIdentifier​(null);
     }
 }

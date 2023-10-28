@@ -1,9 +1,10 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
+// import java.util.Collections;
+
 //Do we need an import statement for Car class?
 
-import javax.management.RuntimeErrorException;
+// import javax.management.RuntimeErrorException;
 
 public class CarLot {
   private ArrayList<Car> inventory;
@@ -33,7 +34,6 @@ public class CarLot {
 
         return sum / inventory.size();
     }
-  }
 
   public ArrayList<Car> getCarsSortedByMPG() {
     ArrayList<Car> sortedByMPG = new ArrayList<>(inventory);
@@ -96,7 +96,7 @@ public class CarLot {
 
 
   // Mutator methods
-  public void addCar(String id, int mileage, int mpg. double cost, double salesPrice) {
+  public void addCar(String id, int mileage, int mpg, double cost, double salesPrice) {
     Car newCar = new Car(id, mileage, mpg, cost, salesPrice);
     inventory.add(newCar);
   }

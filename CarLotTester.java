@@ -5,5 +5,13 @@ public class CarLotTester {
 
         // Testing Accessors
         Car car1 = carlot.findCarByIdentifier​(null);
+
+
+        if (car1 != null){
+            System.out.println("Car" + car1 + "found");
+        }
+        else{
+            System.out.println("Car" + car1 + "not found");
+        }
     }
 }

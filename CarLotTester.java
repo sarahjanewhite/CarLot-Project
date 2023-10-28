@@ -36,6 +36,8 @@ public class CarLotTester {
         
         System.out.println("The average MPG on the lot is: " + carlot.getAverageMpg());
 
+        System.out.println("The cars sorted by MPG are: " + carlot.getCarsSortedByMPG());
+
         System.out.println("The car with the best MPG is: " + carlot.getCarWithBestMPG());
 
         System.out.println("The car with the highest mileage is: " + carlot.getCarWithHighestMileage());

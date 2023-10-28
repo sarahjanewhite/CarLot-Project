@@ -88,7 +88,7 @@ public class CarLot {
   }
 
   ArrayList<Car> 	getInventory() {
-    return
+    return new ArrayList<>(inventory);
   }
 
   public double getTotalProfit() {

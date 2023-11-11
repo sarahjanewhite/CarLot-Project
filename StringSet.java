@@ -3,7 +3,7 @@ import java.util.ArrayList;
 /**
  * StringSet Revisited
  *
- * @author Aliyah Lewis
+ * @author Aliyah Lewis, Jacob Sparks
  *
  */
 public class StringSet extends ArrayList<String> {

@@ -1,3 +1,12 @@
+/**
+ * Building Tester
+ * 
+ * A class to test Building.java
+ *
+ * @author Sarah White
+ *
+ */
+
 import java.util.ArrayList;
 import java.util.Random;
 

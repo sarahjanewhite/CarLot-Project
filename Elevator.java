@@ -1,3 +1,12 @@
+/**
+ * Room
+ * 
+ * A class to simulate an elevator
+ *
+ * @author Sarah White
+ *
+ */
+
 public class Elevator extends Room {
     private int currentFloor;
 

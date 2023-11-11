@@ -1,75 +1,75 @@
-import java.util.*;
-
 /**
- * Classroom
+ * The Classroom class represents a room specifically designed as a classroom,
+ * extending the functionality of the Room class.
  * 
- * A class derived from the room class to simulate a classroom
- *
- * @author 
- *
+ * @author Jacob Sparks
  */
-
-
 class Classroom extends Room {
-   int numberOfChairs;
 
   /**
-   * Accessor that retrieves the number of chairs in the room
-   * @return number of chairs
+   * The number of chairs in the classroom.
    */
-  
-    public int getNumberOfChairs() {
-    return numberOfChairs;
+  private int chairs;
+
+  /**
+   * Constructs a Classroom with the given area and initializes the number of
+   * chairs to 0.
+   *
+   * @param area The area of the classroom.
+   */
+  public Classroom(int area) {
+    super(area);
+    this.chairs = 0;
   }
 
   /**
-  * Mutator method that sets the number of chairs in the room
-  * @param chairs, number of chairs in the room
-  */
-
-  public void setNumberOfChairs(int chairs) {
-    this.numberOfChairs = chairs;
+   * Constructs a Classroom with the given area and number of chairs.
+   *
+   * @param area   The area of the classroom.
+   * @param chairs The number of chairs in the classroom.
+   */
+  public Classroom(int area, int chairs) {
+    super(area);
+    this.chairs = chairs;
   }
 
-    /**
-    * Accessor method that overrides the capacity from the Room class.
-    * The capacity is how many chairs that can fit in the room.
-    * @return the capacity of the Classroom
-    */
-
-   //public int getCapacity() {
-    //returns the capacity of the Classroom.
-
-    return capacity;
-   }
-
-    /**
-    * Constructor 1
-    */
-
-   public Classroom(int area) {
-    squareFeet = area;
-    numberOfChairs = 0;
+  /**
+   * Gets the number of chairs in the classroom.
+   *
+   * @return The number of chairs.
+   */
+  public int getChairs() {
+    return chairs;
   }
 
-    /**
-    * Constructor 2
-    */
-
-   public Classroom(int area, int chairs) {
-    squareFeet = area;
-    numberOfChairs = chairs;
+  /**
+   * Sets the number of chairs in the classroom.
+   *
+   * @param chairs The new number of chairs.
+   */
+  public void setChairs(int chairs) {
+    this.chairs = chairs;
   }
 
-    /**
-    * Display information about the Classroom
-    */
+  /**
+   * Gets the seating capacity of the classroom, which is equal to the number of
+   * chairs.
+   *
+   * @return The seating capacity.
+   */
+  @Override
+  public int getCapacity() {
+    return chairs;
+  }
 
-    public String toString() {
-        // displays the square feet 
-        //displays capacity
-        //displays number of chairs
-        return String; 
-    }
-
+  /**
+   * Returns a string representation of the Classroom, including its area and
+   * number of chairs.
+   *
+   * @return A string representation of the Classroom.
+   */
+  @Override
+  public String toString() {
+    return super.toString() + ", Chairs: " + chairs;
+  }
 }

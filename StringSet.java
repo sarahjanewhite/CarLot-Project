@@ -48,7 +48,6 @@ public class StringSet extends ArrayList<String> {
             try {
                 sum += Integer.parseInt(str);
             } catch (NumberFormatException ignored) {
-                // Not a valid integer, ignore and continue
             }
         }
         return sum;

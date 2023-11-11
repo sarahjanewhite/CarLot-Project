@@ -2,7 +2,7 @@
  * The Classroom class represents a room specifically designed as a classroom,
  * extending the functionality of the Room class.
  * 
- * @author Jacob Sparks
+ * @author Jacob Sparks, Aliyah Lewis
  */
 class Classroom extends Room {
 
@@ -19,7 +19,6 @@ class Classroom extends Room {
    */
   public Classroom(int area) {
     super(area);
-    this.chairs = 0;
   }
 
   /**

@@ -69,6 +69,6 @@ class Classroom extends Room {
    */
   @Override
   public String toString() {
-    return "Square Feet: " + getSquareFeet() + ", Capacity: " + getCapacity() + ", Chairs: " + chairs;
+    return super.toString() + ", Chairs: " + chairs;
   }
 }

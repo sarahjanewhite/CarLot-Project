@@ -67,6 +67,6 @@ class Elevator extends Room {
      */
     @Override
     public String toString() {
-        return super.toString() + ", Current Floor: " + currentFloor;
+        return "Square Feet: " + getSquareFeet() + ", Capacity: " + getCapacity() + ", Current Floor: " + currentFloor;
     }
 }

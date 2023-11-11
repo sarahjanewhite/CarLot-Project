@@ -9,7 +9,7 @@ public class Building {
 		ArrayList<Room> rooms = new ArrayList<>();
 		Random rand = new Random();
 
-		System.out.println("Enter \n\t1: create classroom\n\t2: create elevator\n\t3: exit");
+		System.out.println("Enter \n\t1: Create classroom\n\t2: Create elevator\n\t3: Exit");
 		int inp = kybd.nextInt();
 
 		while (inp != 3) {
@@ -32,7 +32,7 @@ public class Building {
 				rooms.add(current);
 			}
 
-			System.out.println("Enter \n\t1: create classroom\n\t2: create elevator\n\t3: exit");
+			System.out.println("Enter \n\t1: Create classroom\n\t2: Create elevator\n\t3: Exit");
 			inp = kybd.nextInt();
 		}
 

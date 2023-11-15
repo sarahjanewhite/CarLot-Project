@@ -46,6 +46,12 @@ public class CarLotMain {
                 case 8:
                     displayTotalProfit();
                     break;
+                case 9:
+                    carLot.saveToDisk();
+                    System.out.println("Inventory saved to disk.");
+                case 10:
+                    carLot.loadFromDisk();
+                    System.out.println("Inventory loaded from disk.");
             }
         } while (choice != 0);
     }
@@ -61,7 +67,9 @@ public class CarLotMain {
         System.out.println("[6] Display car with highest mileage");
         System.out.println("[7] Display overall MPG for the entire inventory");
         System.out.println("[8] Display profit for all sold cars");
-        System.out.println("Enter a number from 0 to 8: ");
+        System.out.println("[9] Save to Disk");
+        System.out.println("[10] Load from Disk");
+        System.out.println("Enter a number from 0 to 10: ");
     }
 
     private int getChoice() {

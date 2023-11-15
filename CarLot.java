@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
 // import java.util.Collections;
@@ -106,5 +110,39 @@ public class CarLot {
 
     carToSell.sellCar(priceSold);
   }
+
+ public void saveToDisk() {
+      try (PrintWriter writer = new PrintWriter("carlot.txt")) {
+          for (Car car : inventory) {
+              writer.println(car.getId() + "," + car.getMileage() + "," + car.getMpg() + "," +
+                      car.getCost() + "," + car.getSalesPrice());
+          }
+      } catch (IOException e) {
+          e.printStackTrace();
+      }
+  }
+
+  public void loadFromDisk() {
+      try (BufferedReader reader = new BufferedReader(new FileReader("carlot.txt"))) {
+          String line;
+          while ((line = reader.readLine()) != null) {
+              String[] carData = line.split(",");
+              if (carData.length == 5) {
+                  String id = carData[0];
+                  int mileage = Integer.parseInt(carData[1]);
+                  int mpg = Integer.parseInt(carData[2]);
+                  double cost = Double.parseDouble(carData[3]);
+                  double salesPrice = Double.parseDouble(carData[4]);
+
+                  Car loadedCar = new Car(id, mileage, mpg, cost, salesPrice);
+                  inventory.add(loadedCar);
+              }
+          }
+      } catch (IOException | NumberFormatException e) {
+          e.printStackTrace();
+      }
+  }
+
+}
 
 }

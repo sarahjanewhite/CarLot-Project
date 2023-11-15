@@ -49,9 +49,11 @@ public class CarLotMain {
                 case 9:
                     carLot.saveToDisk();
                     System.out.println("Inventory saved to disk.");
+                    break;
                 case 10:
                     carLot.loadFromDisk();
                     System.out.println("Inventory loaded from disk.");
+                    break;
             }
         } while (choice != 0);
     }

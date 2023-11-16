@@ -89,15 +89,24 @@ public class CarLotMain {
         // Implement adding a car to the inventory
         System.out.print("Enter car identifier: ");
         String id = scanner.next();
+        scanner.nextLine(); 
+    
         System.out.print("Enter car mileage: ");
         int mileage = scanner.nextInt();
+        scanner.nextLine(); 
+    
         System.out.print("Enter car MPG: ");
         int mpg = scanner.nextInt();
+        scanner.nextLine(); 
+    
         System.out.print("Enter car cost: ");
         double cost = scanner.nextDouble();
+        scanner.nextLine(); 
+    
         System.out.print("Enter car sales price: ");
         double salesPrice = scanner.nextDouble();
-
+        scanner.nextLine(); 
+    
         carLot.addCar(id, mileage, mpg, cost, salesPrice);
         System.out.println("Car added to inventory.");
     }

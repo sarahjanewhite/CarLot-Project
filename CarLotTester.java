@@ -10,6 +10,8 @@ public class CarLotTester {
         carlot.addCar("Porsche Cayenne", 200, 25, 45000.00, 0.0);
         carlot.addCar("VW Beater", 200500, 10, 0.0, 0.0);
 
+        carlot.saveToDisk();
+
        // Prints car lot
        System.out.println("Car Inventory:");
        ArrayList<Car> inventory = carlot.getInventory();
@@ -59,6 +61,8 @@ public class CarLotTester {
 
         System.out.println("The car with the highest mileage is: " + carlot.getCarWithHighestMileage() + "\n");
 
+
+
         //Sell car(s)
         carlot.sellCar("Hyundai Elantra", 20800.75);
         System.out.println("The Hyundai Elantra has been sold for: $20800.75");
@@ -73,5 +77,22 @@ public class CarLotTester {
         System.out.println();
         System.out.println("The profit is now: $" + String.format("%.2f", carlot.getTotalProfit()));
 
+        //Reset Inventory
+        carlot = new CarLot();
+
+        // Load inv from disk
+        carlot.loadFromDisk();
+
+        // Display loaded inv
+        System.out.println("Loaded Inventory:");
+        ArrayList<Car> loadedInventory = carlot.getInventory();
+        for (Car car : loadedInventory) {
+            System.out.println("ID: " + car.getId() +
+                            ", Mileage: " + car.getMileage() +
+                            ", MPG: " + car.getMpg() +
+                            ", Cost: " + car.getCost() +
+                            ", Sales Price: " + car.getSalesPrice());
+            System.out.println();
+        }
     }
 }

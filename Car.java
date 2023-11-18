@@ -16,7 +16,7 @@ public class Car {
          * Default constructor initializes a Car object with default values.
          *
          **/
-        this("default1", 0, 0, 0.0, 0.0);
+        this("default1", 0, 0, 0.0, 0.0, 0);
     }
 
     /**
@@ -33,7 +33,7 @@ public class Car {
      *                   price.
      * @param nhtsaRating NHTSA rating of the car (1-5 stars).
      */
-    public Car(String id, int mileage, int mpg, double cost, double salesPrice) {
+    public Car(String id, int mileage, int mpg, double cost, double salesPrice, int nhtsaRating) {
         // Constructor for creating a new Car object with specified attributes.
         this.id = id;
         this.mileage = mileage;

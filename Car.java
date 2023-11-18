@@ -43,7 +43,7 @@ public class Car {
         this.sold = false;
         this.priceSold = 0.0;
         this.profit = 0.0;
-        this.nhtsaRating = 0;
+        this.nhtsaRating = nhtsaRating;
     }
 
     // Accessor methods
@@ -147,7 +147,10 @@ public class Car {
     @Override
     public String toString() {
         // Convert the NHTSA rating to asterisks
-        String nhtsaStars = "*".repeat(nhtsaRating);
+        String nhtsaStars = "";
+        for (int i = 0; i < nhtsaRating; i++) {
+            nhtsaStars += "* ";
+        }
 
         return "Car: " + id + ", Mileage: " + mileage + ", MPG " + mpg +
                 ", Sold: " + (sold ? "Yes" : "No") + ", Cost: $" + String.format("%.2f", cost) +

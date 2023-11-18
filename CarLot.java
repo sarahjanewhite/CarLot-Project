@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
-//import java.util.Collections;
-// import javax.management.RuntimeErrorException;
+import java.util.Collections;
+import javax.management.RuntimeErrorException;
 
 public class CarLot extends ArrayList<Car> {
 
@@ -102,8 +102,8 @@ public class CarLot extends ArrayList<Car> {
   }
 
   // Mutator methods
-  public void addCar(String id, int mileage, int mpg, double cost, double salesPrice) {
-    Car newCar = new Car(id, mileage, mpg, cost, salesPrice);
+  public void addCar(String id, int mileage, int mpg, double cost, double salesPrice, int nhtsaRating) {
+    Car newCar = new Car(id, mileage, mpg, cost, salesPrice, nhtsaRating);
     add(newCar);
   }
 
@@ -138,8 +138,9 @@ public class CarLot extends ArrayList<Car> {
           int mpg = Integer.parseInt(carData[2]);
           double cost = Double.parseDouble(carData[3]);
           double salesPrice = Double.parseDouble(carData[4]);
+          String nhtsaRating = carData[5];
 
-          Car loadedCar = new Car(id, mileage, mpg, cost, salesPrice);
+          Car loadedCar = new Car(id, mileage, mpg, cost, salesPrice, nhtsaRating);
           add(loadedCar);
         }
       }

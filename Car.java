@@ -8,6 +8,7 @@ public class Car {
     private boolean sold;
     private double priceSold;
     private double profit;
+    private int nhtsaRating;
 
     // Default Constructor
     public Car() {
@@ -30,6 +31,7 @@ public class Car {
      *                   when a vehicle is sold,
      *                   the price that it sells for may be different than the sales
      *                   price.
+     * @param nhtsaRating NHTSA rating of the car (1-5 stars).
      */
     public Car(String id, int mileage, int mpg, double cost, double salesPrice) {
         // Constructor for creating a new Car object with specified attributes.
@@ -41,6 +43,7 @@ public class Car {
         this.sold = false;
         this.priceSold = 0.0;
         this.profit = 0.0;
+        this.nhtsaRating = 0;
     }
 
     // Accessor methods
@@ -77,6 +80,10 @@ public class Car {
         return profit;
     }
 
+    public int getNhtsaRating() {
+        return nhtsaRating;
+    }
+
     // Setter methods
     public void setMpg(int mpg) {
         this.mpg = mpg;
@@ -107,6 +114,10 @@ public class Car {
         calculateProfit();
     }
 
+    public void setNhtsaRating(int nhtsaRating) {
+        this.nhtsaRating = nhtsaRating;
+    }
+
     // Method to mark the car as sold and calculate profit
     public void sellCar(double priceSold) {
         this.sold = true;
@@ -135,9 +146,13 @@ public class Car {
     // toString method
     @Override
     public String toString() {
+        // Convert the NHTSA rating to asterisks
+        String nhtsaStars = "*".repeat(nhtsaRating);
+
         return "Car: " + id + ", Mileage: " + mileage + ", MPG " + mpg +
                 ", Sold: " + (sold ? "Yes" : "No") + ", Cost: $" + String.format("%.2f", cost) +
                 ", Selling price: $" + String.format("%.2f", salesPrice) +
+                ", NHTSA Rating: " + nhtsaStars +
                 ", Sold For $" + String.format("%.2f", priceSold) +
                 ", Profit: $" + String.format("%.2f", profit);
     }

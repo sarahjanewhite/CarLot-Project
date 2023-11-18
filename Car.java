@@ -43,6 +43,7 @@ public class Car {
         this.sold = false;
         this.priceSold = 0.0;
         this.profit = 0.0;
+        this.nhtsaRating = 0;
     }
 
     // Accessor methods

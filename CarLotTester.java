@@ -6,9 +6,9 @@ public class CarLotTester {
         CarLot carlot = new CarLot();
         
         // Adds cars to the car lot
-        carlot.addCar("Hyundai Elantra", 56000, 45, 13500.50, 0.0);
-        carlot.addCar("Porsche Cayenne", 200, 25, 45000.00, 0.0);
-        carlot.addCar("VW Beater", 200500, 10, 0.0, 0.0);
+        carlot.addCar("Hyundai Elantra", 56000, 45, 13500.50, 0.0, 3);
+        carlot.addCar("Porsche Cayenne", 200, 25, 45000.00, 0.0, 4);
+        carlot.addCar("VW Beater", 200500, 10, 0.0, 0.0, 5);
 
         carlot.saveToDisk();
 

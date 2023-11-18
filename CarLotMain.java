@@ -105,9 +105,13 @@ public class CarLotMain {
     
         System.out.print("Enter car sales price: ");
         double salesPrice = scanner.nextDouble();
-        scanner.nextLine(); 
-    
-        carLot.addCar(id, mileage, mpg, cost, salesPrice);
+        scanner.nextLine();
+
+        System.out.print("Enter NHTSA rating (1-5 stars): ");
+        int nhtsaRating = scanner.nextInt();
+        scanner.nextLine();
+
+        carLot.addCar(id, mileage, mpg, cost, salesPrice, nhtsaRating);
         System.out.println("Car added to inventory.");
     }
 

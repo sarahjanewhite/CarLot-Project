@@ -97,8 +97,8 @@ public class CarLot {
 
 
   // Mutator methods
-  public void addCar(String id, int mileage, int mpg, double cost, double salesPrice) {
-    Car newCar = new Car(id, mileage, mpg, cost, salesPrice);
+  public void addCar(String id, int mileage, int mpg, double cost, double salesPrice, int nhtsaRating) {
+    Car newCar = new Car(id, mileage, mpg, cost, salesPrice, nhtsaRating);
     inventory.add(newCar);
   }
 

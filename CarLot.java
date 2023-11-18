@@ -102,8 +102,8 @@ public class CarLot extends ArrayList<Car> {
   }
 
   // Mutator methods
-  public void addCar(String id, int mileage, int mpg, double cost, double salesPrice) {
-    Car newCar = new Car(id, mileage, mpg, cost, salesPrice);
+  public void addCar(String id, int mileage, int mpg, double cost, double salesPrice, int nhtsaRating) {
+    Car newCar = new Car(id, mileage, mpg, cost, salesPrice, nhtsaRating);
     add(newCar);
   }
 
@@ -121,7 +121,7 @@ public class CarLot extends ArrayList<Car> {
       for (int i = 0; i < size(); i++) {
         Car car = get(i);
         writer.println(car.getId() + "," + car.getMileage() + "," + car.getMpg() + "," + 
-        car.getCost() + "," + car.getSalesPrice());
+        car.getCost() + "," + car.getSalesPrice() + "," + car.getNhtsaRating());
       }
     } catch (IOException e) {
       e.printStackTrace();
@@ -132,14 +132,15 @@ public class CarLot extends ArrayList<Car> {
       String line;
       while ((line = reader.readLine()) != null) {
         String[] carData = line.split(",");
-        if (carData.length == 5) {
+        if (carData.length == 6) {
           String id = carData[0];
           int mileage = Integer.parseInt(carData[1]);
           int mpg = Integer.parseInt(carData[2]);
           double cost = Double.parseDouble(carData[3]);
           double salesPrice = Double.parseDouble(carData[4]);
+          int nhtsaRating = Integer.parseInt(carData[5]);
 
-          Car loadedCar = new Car(id, mileage, mpg, cost, salesPrice);
+          Car loadedCar = new Car(id, mileage, mpg, cost, salesPrice, nhtsaRating);
           add(loadedCar);
         }
       }

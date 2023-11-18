@@ -21,7 +21,8 @@ public class CarLotTester {
                               ", Mileage: " + car.getMileage() +
                               ", MPG: " + car.getMpg() +
                               ", Cost: " + car.getCost() +
-                              ", Sales Price: " + car.getSalesPrice());
+                              ", Sales Price: " + car.getSalesPrice() +
+                              ", NHTSA Rating: " + car.getNhtsaRating());
 
         System.out.println();
        }
@@ -91,7 +92,8 @@ public class CarLotTester {
                             ", Mileage: " + car.getMileage() +
                             ", MPG: " + car.getMpg() +
                             ", Cost: " + car.getCost() +
-                            ", Sales Price: " + car.getSalesPrice());
+                            ", Sales Price: " + car.getSalesPrice() +
+                            ", NHTSA Rating: " + car.getNhtsaRating());
             System.out.println();
         }
     }

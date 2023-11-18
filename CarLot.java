@@ -98,9 +98,10 @@ public class CarLot {
 
   // Mutator methods
   public void addCar(String id, int mileage, int mpg, double cost, double salesPrice, int nhtsaRating) {
-    Car newCar = new Car(id, mileage, mpg, cost, salesPrice, nhtsaRating);
+    Car newCar = new Car(id, mileage, mpg, cost, salesPrice); 
+    newCar.setNhtsaRating(nhtsaRating); // Set the NHTSA rating separately
     inventory.add(newCar);
-  }
+}
 
   public void sellCar(String identifier, double priceSold) throws IllegalArgumentException {
     Car carToSell = findCarByIdentifier​(identifier);

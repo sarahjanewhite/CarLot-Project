@@ -94,5 +94,9 @@ public class CarLotTester {
                             ", Sales Price: " + car.getSalesPrice());
             System.out.println();
         }
+
+        carlot.sellCar("HyundaiElantra", 20800.75);
+        //carlot.sellCar("PoscheCayenne", 75000.98);
+        //carlot.sellCar("VWBeater", 500.00);
     }
 }

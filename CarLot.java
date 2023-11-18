@@ -8,104 +8,99 @@ import java.util.Collections;
 import javax.management.RuntimeErrorException;
 //please work
 
-public class CarLot extends ArrayList<Car> {
+public class CarLot {
+  private ArrayList<Car> inventory;
 
   public CarLot() {
-    
+    inventory = new ArrayList<Car>();
    }
 
-  public double getAverageMPG() {
-    if (isEmpty()) {
-      return 0; // could throw an exception if needed
-    }
-    double sum = 0;
-    for (int i = 0; i < size(); i++) {
-      Car car = get(i);
-      sum+= car.getMpg();
-    }
-
-    return sum /size();
-    }
-  
   public Car findCarByIdentifier​(String identifier) {
-    for (int i = 0; i < size(); i++) {
-      Car car = get(i);
-      if (car.getId() == identifier) {
+    for (Car car : inventory){
+      if (car.getId().equals(identifier)){
         return car;
       }
     }
     return null;
+   }
+
+  public double getAverageMPG() {
+    if (inventory.isEmpty()) {
+            return 0; // could throw an exception if needed
+        }
+
+        double sum = 0;
+        for (Car car : inventory) {
+            sum += car.getMpg();
+        }
+
+        return sum / inventory.size();
+    }
+
+  public ArrayList<Car> getCarsSortedByMPG() {
+    ArrayList<Car> sortedByMPG = new ArrayList<>(inventory);
+
+    sortedByMPG.sort(Comparator.comparingDouble(Car::getMpg));
+
+    return sortedByMPG;
   }
 
   public ArrayList<Car> getCarsInOrderOfEntry() {
-    return this;
+
+    return new ArrayList<>(inventory);
   }
 
   public Car getCarWithBestMPG() {
-    if (isEmpty()) {
+    if (inventory.isEmpty()) {
       return null;
-    }
-    Car bestMPGCar = get(0);
-    
-    for (int i = 0; i < size(); i++) {
-      Car car = get(i);
+  }
+
+  Car bestMPGCar = inventory.get(0);
+
+  for (Car car : inventory) {
       if (car.getMpg() > bestMPGCar.getMpg()) {
-        bestMPGCar = car;
+          bestMPGCar = car;
       }
-    }
-    return bestMPGCar;
   }
-  
+
+  return bestMPGCar;
+  }
+
   public Car getCarWithHighestMileage() {
-    
-    if (isEmpty()) {
+    if (inventory.isEmpty()) {
       return null;
-    }
-    
-    Car highestMileageCar = get(0);
-    
-    for (int i = 0; i < size(); i++) {
-      Car car1 = get(i);
-      if (car1.getMileage() > highestMileageCar.getMileage()) {
-          highestMileageCar = car1;
+  }
+
+  Car highestMileageCar = inventory.get(0);
+
+  for (Car car : inventory) {
+      if (car.getMileage() > highestMileageCar.getMileage()) {
+          highestMileageCar = car;
       }
-    }
-    return highestMileageCar;
   }
-  
-  public ArrayList<Car> getInventory() {
-    return this;
+
+  return highestMileageCar;
   }
-  
+
+  ArrayList<Car> 	getInventory() {
+    return new ArrayList<>(inventory);
+  }
+
   public double getTotalProfit() {
-    if (isEmpty()) {
-      return 0;
+    double totalProfit = 0;
+
+    for (Car car : inventory) {
+        totalProfit += car.getProfit();
     }
 
-    double totalProfit = 0;
-    
-    for (int i = 0; i < size(); i++) {
-      Car car = get(i);
-      totalProfit += car.getProfit();
-    }
-    
     return totalProfit;
   }
 
-  public ArrayList<Car> getCarsSortedByMPG() {
-    CarLot sortedByMPG = new CarLot();
-    for (int i = 0; i < size(); i++) {
-      Car car = get(i);
-      sortedByMPG.add(car);
-      sortedByMPG.sort(Comparator.comparingDouble(Car::getMpg));
-    }
-    return sortedByMPG;
-  }
 
   // Mutator methods
   public void addCar(String id, int mileage, int mpg, double cost, double salesPrice, int nhtsaRating) {
     Car newCar = new Car(id, mileage, mpg, cost, salesPrice, nhtsaRating);
-    add(newCar);
+    inventory.add(newCar);
   }
 
   public void sellCar(String identifier, double priceSold) throws IllegalArgumentException {
@@ -117,37 +112,36 @@ public class CarLot extends ArrayList<Car> {
     carToSell.sellCar(priceSold);
   }
 
-  public void saveToDisk() {
-    try (PrintWriter writer = new PrintWriter("carlot.txt")) {
-      for (int i = 0; i < size(); i++) {
-        Car car = get(i);
-        writer.println(car.getId() + "," + car.getMileage() + "," + car.getMpg() + "," + 
-        car.getCost() + "," + car.getSalesPrice());
+ public void saveToDisk() {
+      try (PrintWriter writer = new PrintWriter("carlot.txt")) {
+          for (Car car : inventory) {
+              writer.println(car.getId() + "," + car.getMileage() + "," + car.getMpg() + "," +
+                      car.getCost() + "," + car.getSalesPrice());
+          }
+      } catch (IOException e) {
+          e.printStackTrace();
       }
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
   }
+
   public void loadFromDisk() {
-    try (BufferedReader reader = new BufferedReader(new FileReader("carlot.txt"))) {
-      String line;
-      while ((line = reader.readLine()) != null) {
-        String[] carData = line.split(",");
-        if (carData.length == 5) {
-          String id = carData[0];
-          int mileage = Integer.parseInt(carData[1]);
-          int mpg = Integer.parseInt(carData[2]);
-          double cost = Double.parseDouble(carData[3]);
-          double salesPrice = Double.parseDouble(carData[4]);
-          String nhtsaRating = carData[5];
+      try (BufferedReader reader = new BufferedReader(new FileReader("carlot.txt"))) {
+          String line;
+          while ((line = reader.readLine()) != null) {
+              String[] carData = line.split(",");
+              if (carData.length == 5) {
+                  String id = carData[0];
+                  int mileage = Integer.parseInt(carData[1]);
+                  int mpg = Integer.parseInt(carData[2]);
+                  double cost = Double.parseDouble(carData[3]);
+                  double salesPrice = Double.parseDouble(carData[4]);
 
-          Car loadedCar = new Car(id, mileage, mpg, cost, salesPrice, nhtsaRating);
-          add(loadedCar);
-        }
+                  Car loadedCar = new Car(id, mileage, mpg, cost, salesPrice);
+                  inventory.add(loadedCar);
+              }
+          }
+      } catch (IOException | NumberFormatException e) {
+          e.printStackTrace();
       }
-    } catch (IOException | NumberFormatException e) {
-      e.printStackTrace();
-    }
   }
-}
 
+}

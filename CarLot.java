@@ -115,7 +115,7 @@ public class CarLot {
       try (PrintWriter writer = new PrintWriter("carlot.txt")) {
           for (Car car : inventory) {
               writer.println(car.getId() + "," + car.getMileage() + "," + car.getMpg() + "," +
-                      car.getCost() + "," + car.getSalesPrice() + "," + car.getNhtsaRating());
+                      car.getCost() + "," + car.getSalesPrice());
           }
       } catch (IOException e) {
           e.printStackTrace();
@@ -127,15 +127,14 @@ public class CarLot {
           String line;
           while ((line = reader.readLine()) != null) {
               String[] carData = line.split(",");
-              if (carData.length == 6) {
+              if (carData.length == 5) {
                   String id = carData[0];
                   int mileage = Integer.parseInt(carData[1]);
                   int mpg = Integer.parseInt(carData[2]);
                   double cost = Double.parseDouble(carData[3]);
                   double salesPrice = Double.parseDouble(carData[4]);
-                  int nhtsaRating = Integer.parseInt(carData[5]);
 
-                  Car loadedCar = new Car(id, mileage, mpg, cost, salesPrice, nhtsaRating);
+                  Car loadedCar = new Car(id, mileage, mpg, cost, salesPrice);
                   inventory.add(loadedCar);
               }
           }

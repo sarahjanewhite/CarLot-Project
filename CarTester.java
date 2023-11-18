@@ -1,8 +1,8 @@
 public class CarTester {
     public static void main(String[] args) {
         // Instantiate at least 2 Car objects
-        Car car1 = new Car("CAR001", 5000, 25, 15000.0, 20000.0, 3);
-        Car car2 = new Car("CAR002", 7000, 20, 18000.0, 25000.0, 4);
+        Car car1 = new Car("CAR001", 5000, 25, 15000.0, 20000.0);
+        Car car2 = new Car("CAR002", 7000, 20, 18000.0, 25000.0);
 
         // Verify that both constructors work as specified
         Car defaultCar = new Car();

@@ -29,7 +29,7 @@ public class CarLot extends ArrayList<Car> {
   public Car findCarByIdentifier​(String identifier) {
     for (int i = 0; i < size(); i++) {
       Car car = get(i);
-      if (car.getId() == identifier) {
+      if (car.getId().equals(identifier)) {
         return car;
       }
     }

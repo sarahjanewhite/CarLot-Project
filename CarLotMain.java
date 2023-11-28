@@ -60,7 +60,7 @@ public class CarLotMain {
 
     private void printMenu() {
         // Menu print goes here
-        System.out.println("[0] to exit");
+        System.out.println("\n[0] to exit");
         System.out.println("[1] Add a car to inventory");
         System.out.println("[2] Sell a car from inventory");
         System.out.println("[3] List inventory by order of acquisition");
@@ -71,7 +71,7 @@ public class CarLotMain {
         System.out.println("[8] Display profit for all sold cars");
         System.out.println("[9] Save to Disk");
         System.out.println("[10] Load from Disk");
-        System.out.println("Enter a number from 0 to 10: ");
+        System.out.println("Enter a number from 0 to 10: \n");
     }
 
     private int getChoice() {
@@ -129,6 +129,7 @@ public class CarLotMain {
     private void listInventoryByAcquisitionOrder() {
         // Implement listing inventory by order of acquisition
         ArrayList<Car> inventory = carLot.getCarsInOrderOfEntry();
+        System.out.println("Cars Listed by Acquisition: ");
         for (Car car : inventory) {
             System.out.println(car);
         }
@@ -151,7 +152,7 @@ public class CarLotMain {
     private void displayCarWithBestMPG() {
         Car CarWithBestMPG = carLot.getCarWithBestMPG();
         if (CarWithBestMPG != null) {
-            System.out.println("Car with the best MPG: " + CarWithBestMPG);
+            System.out.println("Car with the best MPG: \n" + CarWithBestMPG);
         } else {
             System.out.println("No cars in inventory");
         }
@@ -162,7 +163,7 @@ public class CarLotMain {
         // Implement displaying the car with the highest mileage
         Car highestMileageCar = carLot.getCarWithHighestMileage();
         if (highestMileageCar != null) {
-            System.out.println("Car with the highest mileage: " + highestMileageCar);
+            System.out.println("Car with the highest mileage: \n" + highestMileageCar);
         } else {
             System.out.println("No cars in inventory");
         }

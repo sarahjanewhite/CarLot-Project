@@ -46,94 +46,208 @@ public class Car {
         this.nhtsaRating = nhtsaRating;
     }
 
-    // Accessor methods
-    // Accessor methods to retrieve the values of the member variables.
+    // Getter methods
+
+    /**
+     * Gets the Miles Per Gallon of the car
+     * 
+     * @return mpg | The car's MPG
+     */
     public int getMpg() {
         return mpg;
     }
 
+    /**
+     * Gets the cost of the car
+     * 
+     * @return cost | The cost of the car
+     */
     public double getCost() {
         return cost;
     }
 
+    /**
+     * Gets the car's ID
+     * 
+     * @return id | The car's ID
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     * Gets the car's mileage
+     * 
+     * @return mileage | The car's mileage
+     */
     public int getMileage() {
         return mileage;
     }
 
+    /**
+     * Gets the car's selling price
+     * 
+     * @return salesPrice | The car's selling price
+     */
     public double getSalesPrice() {
         return salesPrice;
     }
 
+    /**
+     * Checks if the car has been sold
+     * 
+     * @return sold | True if the car has been sold, false otherwise
+     */
     public boolean isSold() {
         return sold;
     }
 
+    /**
+     * Gets the car's sold price
+     * 
+     * @return priceSold | The car's sold price
+     */
     public double getPriceSold() {
         return priceSold;
     }
 
+    /**
+     * Gets the profit after selling the car
+     * 
+     * @return profit | The profit after selling the car
+     */
     public double getProfit() {
         return profit;
     }
 
+    /**
+     * Gets the NHTSA rating of the car (1-5 stars)
+     * 
+     * @return nhtsaRating | The NHTSA rating of the car
+     */
     public int getNhtsaRating() {
         return nhtsaRating;
     }
 
     // Setter methods
+
+    /**
+     * Sets the car's Miles Per Gallon
+     * 
+     * @param mpg | The new MPG
+     */
     public void setMpg(int mpg) {
         this.mpg = mpg;
     }
 
+    /**
+     * Sets the car's cost
+     * 
+     * @param cost | The cost's new value
+     */
     public void setCost(double cost) {
         this.cost = cost;
     }
 
+    /**
+     * Sets the car's ID
+     * 
+     * @param id | The new ID
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * Sets the car's mileage
+     * 
+     * @param mileage | The new mileage
+     */
     public void setMileage(int mileage) {
         this.mileage = mileage;
     }
 
+    /**
+     * Sets the car's selling price
+     * 
+     * @param salesPrice | The new selling price
+     */
     public void setSalesPrice(double salesPrice) {
         this.salesPrice = salesPrice;
     }
 
+    /**
+     * Sets whether the car has been sold or not
+     * 
+     * @param sold | True if the car is sold, false otherwise
+     */
     public void setSold(boolean sold) {
         this.sold = sold;
     }
 
+    /**
+     * Sets the price for which the car was sold and calculates the profit
+     * 
+     * @param priceSold | The price the car was sold for
+     */
     public void setPriceSold(double priceSold) {
         this.priceSold = priceSold;
         calculateProfit();
     }
 
+    /**
+     * Sets the NHTSA rating of the car
+     * 
+     * @param nhtsaRating | The new NHTSA rating 
+     */
     public void setNhtsaRating(int nhtsaRating) {
         this.nhtsaRating = nhtsaRating;
     }
 
     // Method to mark the car as sold and calculate profit
+
+    /**
+     * Marks the car as sold and sets the selling price
+     * 
+     * @param priceSold | The price for which the car was sold
+     */
     public void sellCar(double priceSold) {
         this.sold = true;
         this.setPriceSold(priceSold);
     }
 
     // Comparison methods
+
+    /**
+     * Compares the MPG of this car with another car
+     * 
+     * @param otherCar | The other car to compare with
+     * @return Double.compare(this.mpg, otherCar.mpg) | A negative value if this car has lower MPG, 
+     * a positive value if higher, and 0 if equal
+     */
     public int compareMPG(Car otherCar) {
         return Double.compare(this.mpg, otherCar.mpg);
 
     }
 
+    /**
+     * Compares the mileage of this car with another car
+     * 
+     * @param otherCar | The other car to compare with
+     * @return Integer.compare(this.mileage, otherCar.mileage) | A negative value if this car has lower mileage, 
+     * a positive value if higher, and 0 if equal
+     */
     public int compareMileage(Car otherCar) {
         return Integer.compare(this.mileage, otherCar.mileage);
     }
 
+    /**
+     * Compares the selling price of this car with another car
+     * 
+     * @param otherCar | The other car to compare with
+     * @return Double.compare(this.salesPrice, otherCar.salesPrice) | A negative value if this car has a 
+     * lower selling price, a positive value if higher, and 0 if equal
+     */
     public int comparePrice(Car otherCar) {
         return Double.compare(this.salesPrice, otherCar.salesPrice);
     }
@@ -144,6 +258,8 @@ public class Car {
     }
 
     // toString method
+
+    
     @Override
     public String toString() {
         // Convert the NHTSA rating to asterisks

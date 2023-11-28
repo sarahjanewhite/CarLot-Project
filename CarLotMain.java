@@ -14,7 +14,7 @@ public class CarLotMain extends java.lang.Object {
      * 
      * Starting point for the CarLot application
      * 
-     * @param args
+     * @param args Not used
      */
     public static void main(String[] args) {
         CarLotMain carLotMain = new CarLotMain();

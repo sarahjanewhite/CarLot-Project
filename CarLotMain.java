@@ -1,6 +1,21 @@
 import java.util.*;
 
-public class CarLotMain {
+/**
+* CarLotMain is the main user interface class for the
+* CarLot application. It reads input and performs
+* output to the Console for all features in the
+* application by using an instance of CarLot
+* 
+*/
+
+public class CarLotMain extends java.lang.Object {
+
+    /**
+     * 
+     * Starting point for the CarLot application
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
         CarLotMain carLotMain = new CarLotMain();
         carLotMain.run();
@@ -9,12 +24,17 @@ public class CarLotMain {
     private CarLot carLot;
     private Scanner scanner;
 
+    /**
+     * Constructor to initialize CarLot and Scanner.
+     */
     public CarLotMain() {
-        // Initialize CarLot and Scanner
         carLot = new CarLot();
         scanner = new Scanner(System.in);
     }
 
+    /**
+     * Main method to run the CarLot application.
+     */
     public void run() {
         int choice;
         do {
@@ -58,8 +78,10 @@ public class CarLotMain {
         } while (choice != 0);
     }
 
+    /**
+     * Prints menu options to the console.
+     */
     private void printMenu() {
-        // Menu print goes here
         System.out.println("\n[0] to exit");
         System.out.println("[1] Add a car to inventory");
         System.out.println("[2] Sell a car from inventory");
@@ -74,6 +96,11 @@ public class CarLotMain {
         System.out.println("Enter a number from 0 to 10: \n");
     }
 
+    /**
+     * Gets the users choice from the menu
+     * 
+     * @return the user's choice
+     */
     private int getChoice() {
         // Implement user input for the menu choice
         int choice;
@@ -85,8 +112,10 @@ public class CarLotMain {
         return choice;
     }
 
+    /**
+     * Adds a user-specified car to the inventory.
+     */
     private void addCarToInventory() {
-        // Implement adding a car to the inventory
         System.out.print("Enter car identifier: ");
         String id = scanner.next();
         scanner.nextLine(); 
@@ -115,8 +144,10 @@ public class CarLotMain {
         System.out.println("Car added to inventory.");
     }
 
+    /**
+     * Sells a specified car from the inventory.
+     */
     private void sellCarFromInventory() {
-        // Implement selling a car from the inventory
         System.out.print("Enter car to sell: ");
         String id = scanner.nextLine();
         System.out.print("Enter the price for the car: ");
@@ -126,8 +157,10 @@ public class CarLotMain {
         System.out.println("Car sold!");
     }
 
+    /**
+     * Displays the inventory by order of acquisition.
+     */
     private void listInventoryByAcquisitionOrder() {
-        // Implement listing inventory by order of acquisition
         ArrayList<Car> inventory = carLot.getCarsInOrderOfEntry();
         System.out.println("Cars Listed by Acquisition: ");
         for (Car car : inventory) {
@@ -135,8 +168,10 @@ public class CarLotMain {
         }
     }
 
+    /**
+     * Displays the inventory from best to worst MPG.
+     */
     private void listInventoryByMPG() {
-        // Implement listing inventory by MPG
         ArrayList<Car> inventory = carLot.getCarsSortedByMPG();
         if (inventory != null) {
             System.out.println("Cars Sorted by MPG: ");
@@ -149,6 +184,9 @@ public class CarLotMain {
 
     }
 
+    /**
+     * Displays the car with the best MPG in the inventory.
+     */
     private void displayCarWithBestMPG() {
         Car CarWithBestMPG = carLot.getCarWithBestMPG();
         if (CarWithBestMPG != null) {
@@ -159,8 +197,10 @@ public class CarLotMain {
 
     }
 
+    /**
+     * Displays the car with the highest mileage in the inventory.
+     */
     private void displayCarWithHighestMileage() {
-        // Implement displaying the car with the highest mileage
         Car highestMileageCar = carLot.getCarWithHighestMileage();
         if (highestMileageCar != null) {
             System.out.println("Car with the highest mileage: \n" + highestMileageCar);
@@ -169,14 +209,18 @@ public class CarLotMain {
         }
     }
 
+    /**
+     * Displays the average MPG for all cars in inventory.
+     */
     private void displayAverageMPG() {
-        // Implement displaying the average MPG for all cars in inventory
         double averageMPG = carLot.getAverageMPG();
         System.out.println("Average MPG for all cars in inventory: " + averageMPG);
     }
 
+    /**
+    * Displays the total profit for all sold cars.
+    */
     private void displayTotalProfit() {
-        // Implement displaying the total profit for all sold cars
         double totalProfit = carLot.getTotalProfit();
         System.out.println("Total profit for all sold cars: $" + totalProfit);
     }

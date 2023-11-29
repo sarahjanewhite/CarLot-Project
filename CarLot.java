@@ -183,7 +183,7 @@ public class CarLot extends ArrayList<Car> {
     }
 
     carToSell.sellCar(priceSold);
-  }
+  }  
 
   /**
    * Saves the car in this carlot to the file specified in CARLOT_INVENTORY
@@ -196,7 +196,7 @@ public class CarLot extends ArrayList<Car> {
         Car car = get(i);
         String soldStatus = car.isSold() ? "Sold" : "Not Sold"; // Indicates sold or not sold
         writer.println("ID: " + car.getId() + ", Mileage: " + car.getMileage() + ", MPG: " + car.getMpg() + ", Cost: " +
-            car.getCost() + ", Sales Price: " + car.getSalesPrice() + ", NHTSA Rating: " + car.getNhtsaRating() + ", Status: " +
+            car.getCost() + ", Sales Price: " + car.getSalesPrice() + ", NHTSA Rating: " + car.getNhtsaRating() + " star(s)"+ ", Status: " +
             soldStatus); // Include sold status in the file
       }
     } catch (IOException e) {

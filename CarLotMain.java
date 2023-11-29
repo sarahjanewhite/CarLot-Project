@@ -149,13 +149,16 @@ public class CarLotMain extends java.lang.Object {
      */
     private void sellCarFromInventory() {
         System.out.print("Enter car to sell: ");
-        String id = scanner.nextLine();
+        String id = scanner.next();
+        scanner.nextLine();
+    
         System.out.print("Enter the price for the car: ");
         double priceSold = Double.parseDouble(scanner.nextLine());
-
+    
         carLot.sellCar(id, priceSold);
         System.out.println("Car sold!");
     }
+    
 
     /**
      * Displays the inventory by order of acquisition.

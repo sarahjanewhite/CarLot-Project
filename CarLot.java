@@ -194,8 +194,10 @@ public class CarLot extends ArrayList<Car> {
     try (PrintWriter writer = new PrintWriter("carlot.txt")) {
       for (int i = 0; i < size(); i++) {
         Car car = get(i);
+        String soldStatus = car.isSold() ? "Sold" : "Not Sold"; // Indicates sold or not sold
         writer.println(car.getId() + "," + car.getMileage() + "," + car.getMpg() + "," +
-            car.getCost() + "," + car.getSalesPrice() + "," + car.getNhtsaRating());
+            car.getCost() + "," + car.getSalesPrice() + "," + car.getNhtsaRating() + "," +
+            soldStatus); // Include sold status in the file
       }
     } catch (IOException e) {
       e.printStackTrace();

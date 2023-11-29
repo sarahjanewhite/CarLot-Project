@@ -195,8 +195,8 @@ public class CarLot extends ArrayList<Car> {
       for (int i = 0; i < size(); i++) {
         Car car = get(i);
         String soldStatus = car.isSold() ? "Sold" : "Not Sold"; // Indicates sold or not sold
-        writer.println(car.getId() + "," + car.getMileage() + "," + car.getMpg() + "," +
-            car.getCost() + "," + car.getSalesPrice() + "," + car.getNhtsaRating() + "," +
+        writer.println("ID: " + car.getId() + ", Mileage: " + car.getMileage() + ", MPG: " + car.getMpg() + ", Cost: " +
+            car.getCost() + ", Sales Price: " + car.getSalesPrice() + ", NHTSA Rating: " + car.getNhtsaRating() + ", Status: " +
             soldStatus); // Include sold status in the file
       }
     } catch (IOException e) {
